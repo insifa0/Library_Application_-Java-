@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 class Main {
   
+  Library l = new Library();
+  
   public static void main(String[] args) {
   // Menu
     System.out.println("Choose an option:");
@@ -34,7 +36,11 @@ class Main {
     } else if (o == 3){
 
     } else if (o == 4){
-
+      String name = "Max";
+      String surname = "Mustermann";
+      
+      Customer c = new Customer();
+      
     } else if (o == 5){
 
     } else if (o == 6){
