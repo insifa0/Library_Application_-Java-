@@ -11,4 +11,15 @@ class Book {
     title = t;
     author = a;
   }
+  public Book(String t) {
+    title = t;
+  }
+  public Book(String t, String a, int y, int c, String ar, String l){
+    title = t;
+    author = a;
+    publication_year = y;
+    page_count = c;
+    area = ar;
+    location = l;
+  }
 }
