@@ -1,4 +1,5 @@
 class Book {
+  String isbn;
   String title;
   String author;
   int publication_year;
@@ -7,11 +8,13 @@ class Book {
   String location;
 
   // Constructor fumction tanimlayalim ve o title ile outhor bilgisini sart olarak belirle  
-  public Book(String t, String a) {
+  public Book(String i, String t, String a) {
+    isbn = i;
     title = t;
     author = a;
   }
-  public Book(String t) {
+  public Book(String i, String t) {
+    isbn = i;
     title = t;
   }
   public Book(String t, String a, int y, int c, String ar, String l){
