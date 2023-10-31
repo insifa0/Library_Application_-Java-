@@ -2,7 +2,7 @@
 class Employee extends Person{
   String start_date;
 
-  public  Member(String tc, String n, String s){
+  public  Employee(String tc, String n, String s){
     // ust sinifin constructorini cagir
     super(t,n,s);
   }

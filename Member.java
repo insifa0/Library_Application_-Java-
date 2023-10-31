@@ -3,10 +3,10 @@ class Member extends Person{
 
   public  Member(String tc, String n, String s){
     // ust sinifin constructorini cagir
-    super(t,n,s);
+    super(tc,n,s);
   }
 
-  public Member(){
+  /*public Member(){
     super("","","");
-  } //Hiç bir değeri olmayan member oluşturmak için
+  }*/ //Hiç bir değeri olmayan member oluşturmak için
 }
