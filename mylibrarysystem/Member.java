@@ -1,4 +1,6 @@
-class Member extends Person{
+package mylibrarysystem;
+
+public class Member extends Person{
   Book[] rented_books;
 
   public  Member(String tc, String n, String s){

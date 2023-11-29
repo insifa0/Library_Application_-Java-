@@ -1,10 +1,24 @@
 import java.util.Scanner;
+import mylibrarysystem.*;
 
 class Main {
-  
+   
   public static void main(String[] args) {
-
     Library l = new Library();
+    
+    Book b1 = new Book("12345", "aaa", "bbb");
+    Book b2 = new Book("12346", "ccc", "ddd");
+    Book b3 = new Book("12347", "eee", "fff");
+    l.addBook(b1);
+    l.addBook(b2);
+    l.addBook(b3);
+    Book b4 = l.findBook(new Book("12346", "ccc", "ddd"));
+    if(b4 == null) {
+      System.out.println("bulamadim");
+    } else {
+      System.out.println(b4.getISBN() + " " + b4.getTitle() + " " + b4.getAuthor());
+    }
+    
     int o = -1;
 
     
@@ -31,8 +45,8 @@ class Main {
       o = sc.nextInt();
       sc.nextLine(); // bir hatadan dolayı bunu ekledik
       if (o == 0){
-        for(int i=0; i<l.book_count; i++){
-          System.out.println(l.books[i].getTitle() + ", " + l.books[i].getAuthor());
+          for (int i=0; i<l.getBookcount(); i++) {
+            System.out.println(l.getBook(i).getISBN() + ", " + l.getBook(i).getTitle() + ", " + l.getBook(i).getAuthor());
         }
         
         System.out.println("***End of the books***");
@@ -42,7 +56,7 @@ class Main {
         System.out.println("Enter ISBM name");
         String isbn = sc.nextLine();
           if(Book.is_isbn_correct(isbn) == true) {
-            System.out.println("Enter book name");
+            System.out.println("Enter book title");
             String tt = sc.nextLine();
 
             System.out.println("Enter author name");
@@ -50,23 +64,32 @@ class Main {
 
             // isbn 5 rakamdan olusmali
             Book b = new Book(isbn,tt,aa); //Constructor function
-            b.setISBN("12345"); // elle isnm atadık
             
-            l.books[l.book_count] = b;
-            l.book_count++; //Kayıtlı kitap sayısını 1 artırdık
           } else {
             System.out.println("isbn must have consist of 5 digits");
         } 
       } else if (o == 2){
         
+        System.out.println("enter isbn number");
+        String isbn = sc.nextLine();
+        l.deleteBook(isbn);
+                
       } else if (o == 3){
+
+        System.out.println("enter title you want to search");
+        String t = sc.nextLine();
+        Book b = l.findBook(t);
+        if(b == null) {
+          System.out.println("book does not exist in our library");
+        } else {
+          System.out.println(b.getISBN() + " " + b.getTitle() + " " + b.getAuthor());
+        }
   
       } else if (o == 4){
         String name = "Max";
         String surname = "Mustermann";
         
         //Member c = new Member();
-        
       } else if (o == 5){
   
       } else if (o == 6){
